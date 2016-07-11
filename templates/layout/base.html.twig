@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="{{ relative_path('/components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ relative_path('/components/bootstrap-submenu/dist/css/bootstrap-submenu.min.css') }}">
+
+  <!-- global css -->
+  <link rel="stylesheet" href="{{ relative_path('/css/global.css') }}" type="text/css">
+
+  <title>{% block title %}{% endblock %} | {{ wiki_title }}</title>
+</head>
+<body>
+  {% block body %}{% endblock %}
+
+  <!-- Javascripts -->
+  <script src="{{ relative_path('/components/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ relative_path('/components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  <script src="{{ relative_path('/components/bootstrap-submenu/dist/js/bootstrap-submenu.min.js') }}"></script>
+  <script src="{{ relative_path('/components/smooth-scroller/dist/smooth-scroller.bower.js') }}"></script>
+  <script src="{{ relative_path('/components/toc/dist/toc.bower.js') }}"></script>
+
+  <!-- global js -->
+  <script src="{{ relative_path('/js/global.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+parameters:
+    wiki_title: WikiReader
+    wiki_path: wiki

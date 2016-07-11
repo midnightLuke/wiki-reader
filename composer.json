@@ -1,0 +1,41 @@
+{
+    "name": "midnightluke/wiki-reader",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Bainbridge",
+            "email": "luke.bainbridge@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "^2.0",
+        "twig/twig": "^1.24",
+        "symfony/twig-bridge": "^3.1",
+        "symfony/finder": "^3.1",
+        "symfony/asset": "^3.1",
+        "aptoma/twig-markdown": "^2.0",
+        "michelf/php-markdown": "^1.6",
+        "symfony/yaml": "^3.1",
+        "incenteev/composer-parameter-handler": "^2.1",
+        "nicmart/tree": "^0.2.7"
+    },
+    "require-dev": {
+        "raveren/kint": "^1.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ]
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "file": "config/parameters.yml"
+        }
+    },
+    "autoload": {
+        "psr-4": { "MidnightLuke\\WikiReader\\": "src/" }
+    }
+}

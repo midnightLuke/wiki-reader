@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a href="{{ relative_path('/') }}" class="navbar-brand">{{ wiki_title }}</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            {% for leaf in menu_tree.children %}
+                {% if leaf.children %}
+                    {% include 'partials/subnav.html.twig' with { 'tree': leaf } only %}
+                {% else %}
+                    <li><a href="{% if leaf.linked %}{{ relative_path(leaf.path) }}{% else %}#{% endif %}">{{ leaf.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

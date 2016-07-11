@@ -1,0 +1,16 @@
+<li class="dropdown{% if not tree.parent.isroot %}-submenu{% endif %}">
+    <a href="#" tabindex="0" data-toggle="dropdown"{% if tree.parent.isroot %} data-submenu=""{% endif %}>{{ tree.title }}{% if tree.parent.isroot %}<span class="caret"></span>{% endif %}</a>
+    <ul class="dropdown-menu">
+        {% if tree.linked %}
+            <li><a href="{{ relative_path(tree.path) }}">{{ tree.title }}</a></li>
+            <li class="divider"></li>
+        {% endif %}
+        {% for leaf in tree.children %}
+            {% if leaf.children %}
+                {% include 'partials/subnav.html.twig' with { 'tree': leaf } only %}
+            {% else %}
+                <li><a href="{% if leaf.linked %}{{ relative_path(leaf.path) }}{% else %}#{% endif %}">{{ leaf.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</li>

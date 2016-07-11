@@ -1,0 +1,19 @@
+<div class="breadcrumb-container">
+    <ol class="breadcrumb">
+    {% for leaf in active.getancestorsandself %}
+        {% if leaf.isroot %}
+            <li><a href="{{ relative_path(leaf.path) }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        {% elseif loop.last %}
+            <li class="active">{{ leaf.title }}</li>
+        {% else %}
+            <li>
+                {% if leaf.linked %}
+                    <a href="{{ relative_path(leaf.path) }}">{{ leaf.title }}</a>
+                {% else %}
+                    {{ leaf.title }}
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</div>
