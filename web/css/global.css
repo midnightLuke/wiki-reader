@@ -32,3 +32,8 @@ body {
 #toc .toc-active {
   background: #f8f8f8;
 }
+
+.content img {
+  max-width: 100%;
+  height: auto;
+}
